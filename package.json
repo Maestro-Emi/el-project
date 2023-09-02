@@ -7,7 +7,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
+<<<<<<< HEAD
     "react-bootstrap": "^2.8.0",
+=======
+>>>>>>> ac5a3d25c2a4cd2bd6155e69034dc57daef45fdc
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
