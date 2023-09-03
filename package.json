@@ -1,5 +1,6 @@
 {
   "name": "project",
+  "proxy": "http://localhost:4000",
   "version": "1.0.0",
   "description": "my project e-commerce",
   "main": "server.js",
