@@ -13,6 +13,7 @@ const HomeScreen = () => {
     }
     fetchProducts()
   }, [])  
+  
   return (
     <>
       <h1>Latest Products</h1>
