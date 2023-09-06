@@ -1,29 +1,45 @@
-import React, {useState, useEffect} from "react";
-import { Row, Col } from "react-bootstrap";
-import Product from '../components/Products'
-import axios from 'axios'
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Row, Col } from 'react-bootstrap';
+import Product from '../components/Products';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 
-const HomeScreen = () => {
-  const [products, setProducts] = useState([])
+const HomeScreen = ({ match }) => {
+  // Extract keyword and page number from the URL.
+  const keyword = match.params.keyword;
+  const pageNumber = match.params.pageNumber || 1;
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const {data} = await axios.get('/api/products')
-      setProducts(data)
-    }
-    fetchProducts()
-  }, [])  
-  
+  // Get dispatch function from Redux.(mail man)
+  const dispatch = useDispatch();
+
+  products = ["LALALA"]
+
   return (
     <>
+      
+        <Link to='/' className='btn btn-light'>
+          Go Back
+        </Link>
+
       <h1>Latest Products</h1>
-      <Row>
-        {products.map((product) => (
-          <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-            <Product product={product} />
-          </Col>
-        ))}
-      </Row>
+
+      {/* Display loader while loading, error message if there's an error */}
+      
+        <Loader />
+    
+      (
+        <>
+          <Row>
+            {products.map((product) => (
+              <Col key={product._id} nd>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
+        </>
+      )
     </>
   );
 };

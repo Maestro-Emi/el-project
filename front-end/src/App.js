@@ -1,24 +1,21 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { Container } from 'react-bootstrap'; 
-import Header from './components/Header'; 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
-
+import LoginScreen from './screens/LoginScreen';
 
 const App = () => {
   return (
-    <Router >
+    <Router>
       <Header />
       <main className='py-3'>
         <Container>
-
-          <Routes>
-          <Route path='/' element={<HomeScreen />}/> {/* exact means that the path must be exactly '/' */}
-          <Route path='/product/:id' element={<ProductScreen />}/>{/* :id is a placeholder for the product id when clicked*/}
-          </Routes>
-
+          <Route path='/login' component={LoginScreen} />
+          <Route path='/product/:id' component={ProductScreen} /> {/*unfinshed*/}
+          <Route path='/' component={HomeScreen} exact />
         </Container>
       </main>
       <Footer />
