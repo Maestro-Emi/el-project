@@ -1,7 +1,6 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {initialState} from './components/initialState';
 
 
 
@@ -9,7 +8,7 @@ import {initialState} from './components/initialState';
   
 //ADD LOCAL STORAGE CART ITEMS HERE
 
-const middleware = [thunk];
+const middleware = applyMiddleware([thunk]);
 
 // Creating the Redux store object
 

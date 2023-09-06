@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Products';
-import Message from '../components/Message';
 import Loader from '../components/Loader';
 
 const HomeScreen = ({ match }) => {
